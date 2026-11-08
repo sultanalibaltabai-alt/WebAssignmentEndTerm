@@ -1,0 +1,33 @@
+.dark-theme {
+    background-color: #1c120b;
+    color: #f0e4d4;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+    color: #e0b48a;
+}
+
+.dark-theme .page-header h1 {
+    color: white;
+}
+
+.dark-theme .bg-white {
+    background-color: #2b1a10 !important;
+}
+
+.dark-theme .card-box {
+    background-color: #2b1a10;
+    border-color: #5a4331;
+}
+
+.dark-theme .field {
+    background-color: #1c120b;
+    color: #f0e4d4;
+    border-color: #5a4331;
+}
+
+.dark-theme footer {
+    background-color: #120a05;
+}
