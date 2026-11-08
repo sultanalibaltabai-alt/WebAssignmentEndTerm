@@ -1,0 +1,114 @@
+:root {
+    scroll-behavior: auto;
+}
+
+.menu-controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu-controls .flex-fill {
+    min-width: 200px;
+}
+
+.menu-controls select {
+    min-width: 180px;
+}
+
+.action-button {
+    background-color: white;
+    color: #6f4e37;
+    border: 1px solid #6f4e37;
+    border-radius: 8px;
+    padding: 4px 12px;
+    white-space: nowrap;
+}
+
+.action-button:hover {
+    background-color: #6f4e37;
+    color: white;
+}
+
+.favorite-button.active {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    color: white;
+}
+
+.panel {
+    height: 100%;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #e6d5c0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(43, 26, 16, 0.15);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e6d5c0;
+}
+
+.btn-coffee:disabled {
+    background-color: #c68b59;
+    color: white;
+    opacity: 0.5;
+}
+
+#toast {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+    padding: 12px 24px;
+    background-color: #2b1a10;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: #c68b59;
+    color: white;
+    font-size: 24px;
+}
+
+#back-to-top:hover {
+    background-color: #6f4e37;
+}
+
+.dark-theme .panel,
+.dark-theme table {
+    background-color: #2b1a10;
+    border-color: #5a4331;
+}
+
+.dark-theme th,
+.dark-theme td,
+.dark-theme .cart-item {
+    border-color: #5a4331;
+}
+
+.dark-theme tr:nth-child(even) {
+    background-color: #3a2618;
+}
+
+.dark-theme tr.highlight-row {
+    background-color: #c68b59;
+}
