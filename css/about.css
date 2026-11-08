@@ -1,0 +1,9 @@
+.team-bio {
+    display: none;
+    margin-top: 15px;
+}
+
+.team-card-open {
+    border-color: #c68b59;
+    box-shadow: 0 10px 25px rgba(43, 26, 16, 0.35);
+}
