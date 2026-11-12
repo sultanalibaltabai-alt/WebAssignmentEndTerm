@@ -90,3 +90,15 @@ jan-coffee/
 
 ## Live Link
 
+
+## Sultanali - Final-stage update
+
+The Home and About pages now include font-size controls (12-22 px), with the selected size saved in localStorage. Shared storage helpers recover from invalid JSON and unavailable browser storage.
+
+The Home page loads current weather in Astana and a five-day forecast from Open-Meteo without an API key. The DayForecast class provides the forecast labels and temperature ranges. Loading, empty, error and retry states are included. Drink advice changes with the temperature, and the See drinks link opens the existing Menu page. Automatic selection of the Menu filter depends on the Menu update.
+
+Files: index.html, about.html, js/storage.js, js/accessibility.js, css/theme.css, js/weather-api.js, js/weather.js, js/home-jquery.js, css/home.css.
+
+Alihan's Menu and Rizon's Gallery and Contact remain at their current repository versions. Their Final-stage changes and the Reviews page have not been published in this update.
+
+Validation: browser checks cover five forecast cards with controlled API responses, API failure/retry and empty responses, font-size persistence and reset after invalid data, theme persistence, About biographies, adding a drink to the cart, all existing pages, a 390 px viewport, and blocked localStorage. No JavaScript page errors were observed. API checks use controlled responses and do not establish live service availability.
