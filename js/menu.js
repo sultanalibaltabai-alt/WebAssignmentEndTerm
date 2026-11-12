@@ -228,4 +228,4 @@ menuBody.addEventListener('click', handleMenuClick);
 cartList.addEventListener('click', handleCartClick);
 orderButton.addEventListener('click', placeOrder);
 clearCartButton.addEventListener('click', clearCart);
-clearFavoritesButton.addEventListener('click', clearFavorites);drinkData
+clearFavoritesButton.addEventListener('click', clearFavorites);
