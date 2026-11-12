@@ -11,71 +11,79 @@
     <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Jan &amp; Coffee</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><button type="button" id="theme-toggle" class="btn btn-sm btn-outline-light ms-lg-3 my-2 my-lg-0" aria-pressed="false">Dark mode</button></li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Jan &amp; Coffee</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><button type="button" id="theme-toggle" class="btn btn-sm btn-outline-light ms-lg-3 my-2 my-lg-0" aria-pressed="false">Dark mode</button></li>
+                        <li class="nav-item font-controls ms-lg-2 my-2 my-lg-0">
+                            <button type="button" id="font-decrease" class="btn btn-sm btn-outline-light" aria-label="Decrease font size">A-</button>
+                            <button type="button" id="font-reset" class="btn btn-sm btn-outline-light" aria-label="Reset font size">A</button>
+                            <button type="button" id="font-increase" class="btn btn-sm btn-outline-light" aria-label="Increase font size">A+</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
-<main>
-    <section class="page-header">
-        <div class="container">
-            <h1>Gallery</h1>
-            <p>A little look inside our coffee shop</p>
-        </div>
-    </section>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Gallery</h1>
+                <p>A little look inside our coffee shop</p>
+            </div>
+        </section>
 
-    <section class="container py-5">
-        <div class="gallery" id="gallery"></div>
-    </section>
-</main>
-<footer>
-    <div class="container">
-        <div class="footer-flex">
-            <div>
-                <h3>Jan &amp; Coffee</h3>
-                <p>Fresh coffee made with love.</p>
+        <section class="container py-5">
+            <div class="gallery" id="gallery"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div>
+                    <h3>Jan &amp; Coffee</h3>
+                    <p>Fresh coffee made with love.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Opening Hours</h3>
+                    <p class="mb-1">Mon - Fri: 8:00 - 21:00</p>
+                    <p class="mb-1">Sat - Sun: 9:00 - 22:00</p>
+                </div>
             </div>
-            <div>
-                <h3>Quick Links</h3>
-                <ul class="list-unstyled">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Opening Hours</h3>
-                <p class="mb-1">Mon - Fri: 8:00 - 21:00</p>
-                <p class="mb-1">Sat - Sun: 9:00 - 22:00</p>
-            </div>
+            <p class="copyright">&copy; 2026 Jan &amp; Coffee. Astanait University.</p>
         </div>
-        <p class="copyright">&copy; 2026 Jan &amp; Coffee. Astanait University.</p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/gallery-data.js"></script>
-<script src="js/gallery-jquery.js"></script>
-<script src="js/gallery.js"></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/gallery-data.js"></script>
+    <script src="js/gallery-jquery.js"></script>
+    <script src="js/gallery.js"></script>
 </body>
 </html>
