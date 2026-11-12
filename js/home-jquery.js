@@ -20,3 +20,9 @@ $(function () {
         .on('mouseenter', '.drink-card', dimOtherCards)
         .on('mouseleave', '.drink-card', showAllCards);
 });
+
+function fadeInForecast() {
+    $('.forecast-day').hide().each(function (index) {
+        $(this).delay(index * CARD_DELAY).fadeIn(400);
+    });
+}

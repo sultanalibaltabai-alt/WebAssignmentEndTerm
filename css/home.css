@@ -2,3 +2,42 @@
     background-color: #2b1a10;
     border-color: #5a4331;
 }
+
+.weather-now {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.weather-temp {
+    margin: 0;
+    font-size: 56px;
+    font-weight: bold;
+    color: #6f4e37;
+}
+
+.forecast-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.forecast-day {
+    padding: 16px;
+    background-color: #f8f1e7;
+    border: 1px solid #e6d5c0;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.forecast-day h3 {
+    font-size: 18px;
+}
+
+.dark-theme .weather-temp {
+    color: #e0b48a;
+}
+
+.dark-theme .forecast-day {
+    background-color: #2b1a10;
+    border-color: #5a4331;
+}
