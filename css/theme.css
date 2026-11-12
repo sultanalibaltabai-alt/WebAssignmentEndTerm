@@ -31,3 +31,68 @@
 .dark-theme footer {
     background-color: #120a05;
 }
+
+.font-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.action-button {
+    background-color: white;
+    color: #6f4e37;
+    border: 1px solid #6f4e37;
+    border-radius: 8px;
+    padding: 4px 12px;
+    white-space: nowrap;
+}
+
+.action-button:hover {
+    background-color: #6f4e37;
+    color: white;
+}
+
+.action-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.action-button:disabled:hover {
+    background-color: white;
+    color: #6f4e37;
+}
+
+.btn-coffee:disabled {
+    background-color: #c68b59;
+    color: white;
+    opacity: 0.5;
+}
+
+.panel {
+    height: 100%;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #e6d5c0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(43, 26, 16, 0.15);
+}
+
+.panel label {
+    display: block;
+    font-weight: bold;
+}
+
+.dark-theme .panel {
+    background-color: #2b1a10;
+    border-color: #5a4331;
+}
+
+.dark-theme .action-button {
+    background-color: #2b1a10;
+    color: #e0b48a;
+    border-color: #e0b48a;
+}
+
+.dark-theme .action-button:hover {
+    background-color: #e0b48a;
+    color: #1c120b;
+}
