@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jan & Coffee | Reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/validation.css">
+    <link rel="stylesheet" href="css/reviews.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Jan &amp; Coffee</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="reviews.html">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><button type="button" id="theme-toggle" class="btn btn-sm btn-outline-light ms-lg-3 my-2 my-lg-0" aria-pressed="false">Dark mode</button></li>
+                        <li class="nav-item font-controls ms-lg-2 my-2 my-lg-0">
+                            <button type="button" id="font-decrease" class="btn btn-sm btn-outline-light" aria-label="Decrease font size">A-</button>
+                            <button type="button" id="font-reset" class="btn btn-sm btn-outline-light" aria-label="Reset font size">A</button>
+                            <button type="button" id="font-increase" class="btn btn-sm btn-outline-light" aria-label="Increase font size">A+</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Guest Reviews</h1>
+                <p>Tell us how you liked Jan &amp; Coffee</p>
+            </div>
+        </section>
+
+        <section class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <form id="review-form" class="panel" action="#" method="post" novalidate>
+                        <h2>Write a Review</h2>
+
+                        <label for="review-name">Your Name</label>
+                        <input type="text" id="review-name" class="field" aria-describedby="review-name-error">
+                        <small id="review-name-error" class="error-message"></small>
+
+                        <label for="review-rating">Rating</label>
+                        <select id="review-rating" class="field" aria-describedby="review-rating-error">
+                            <option value="">Choose a rating</option>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Good</option>
+                            <option value="3">3 - Normal</option>
+                            <option value="2">2 - Bad</option>
+                            <option value="1">1 - Terrible</option>
+                        </select>
+                        <small id="review-rating-error" class="error-message"></small>
+
+                        <label for="review-text">Your Review</label>
+                        <textarea id="review-text" rows="4" class="field" aria-describedby="review-text-error review-text-counter"></textarea>
+                        <small id="review-text-counter" class="char-counter">0 / 200</small>
+                        <small id="review-text-error" class="error-message"></small>
+
+                        <button type="submit" id="review-submit" class="btn btn-coffee rounded-pill">Add Review</button>
+                        <button type="button" id="review-cancel" class="action-button ms-2 d-none">Cancel</button>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="panel">
+                        <h2>Statistics</h2>
+                        <p class="mb-1">Total reviews: <span id="stats-total" class="price">0</span></p>
+                        <p>Average rating: <span id="stats-average" class="price">-</span></p>
+                        <div id="stats-bars"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container pb-5">
+            <h2 class="text-center mb-4">All Reviews</h2>
+            <p id="review-message" class="review-message" role="status"></p>
+            <p id="reviews-empty" class="text-center">No reviews yet. Be the first to write one!</p>
+            <div id="review-list"></div>
+            <div class="text-center mt-4">
+                <button type="button" id="clear-reviews" class="action-button" disabled>Delete All Reviews</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div>
+                    <h3>Jan &amp; Coffee</h3>
+                    <p>Fresh coffee made with love.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Opening Hours</h3>
+                    <p class="mb-1">Mon - Fri: 8:00 - 21:00</p>
+                    <p class="mb-1">Sat - Sun: 9:00 - 22:00</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Jan &amp; Coffee. Astanait University.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/reviews-jquery.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/reviews-classes.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>
