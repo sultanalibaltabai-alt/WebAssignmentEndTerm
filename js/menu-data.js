@@ -1,4 +1,4 @@
-const drinks = [
+const drinkData = [
     { id: 1, name: 'Espresso', type: 'Hot', size: 'Small', price: 500, bestSeller: false },
     { id: 2, name: 'Americano', type: 'Hot', size: 'Medium', price: 700, bestSeller: false },
     { id: 3, name: 'Cappuccino', type: 'Hot', size: 'Medium', price: 700, bestSeller: true },
