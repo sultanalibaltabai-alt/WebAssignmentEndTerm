@@ -64,26 +64,6 @@ const fieldRules = [
     { field: messageField, validate: validateMessage }
 ];
 
-function showFieldError(field, errorText) {
-    const errorElement = document.getElementById(field.id + '-error');
-    errorElement.textContent = errorText;
-    field.classList.toggle('invalid', errorText !== '');
-    field.classList.toggle('valid', errorText === '');
-}
-
-function checkField(rule) {
-    const errorText = rule.validate(rule.field.value);
-    showFieldError(rule.field, errorText);
-    return errorText === '';
-}
-
-function clearValidation() {
-    for (const rule of fieldRules) {
-        rule.field.classList.remove('invalid', 'valid');
-        document.getElementById(rule.field.id + '-error').textContent = '';
-    }
-}
-
 function updateMessageCounter() {
     messageCounter.textContent = messageField.value.length + ' / ' + MAX_MESSAGE_LENGTH;
 }
@@ -97,13 +77,7 @@ function handleSubmit(event) {
     event.preventDefault();
     hideSuccess();
 
-    let firstInvalidField = null;
-    for (const rule of fieldRules) {
-        const isValid = checkField(rule);
-        if (!isValid && firstInvalidField === null) {
-            firstInvalidField = rule.field;
-        }
-    }
+    const firstInvalidField = checkAllFields(fieldRules);
 
     if (firstInvalidField !== null) {
         shakeForm();
@@ -114,19 +88,8 @@ function handleSubmit(event) {
     const wantsReply = contactForm.elements.reply.value === 'yes';
     showSuccess(createSuccessText(nameField.value, wantsReply));
     contactForm.reset();
-    clearValidation();
+    clearValidation(fieldRules);
     updateMessageCounter();
-}
-
-function watchField(rule) {
-    rule.field.addEventListener('blur', function () {
-        checkField(rule);
-    });
-    rule.field.addEventListener('input', function () {
-        if (rule.field.classList.contains('invalid')) {
-            checkField(rule);
-        }
-    });
 }
 
 for (const rule of fieldRules) {

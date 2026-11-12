@@ -1,33 +1,5 @@
-.error-message {
-    display: block;
-    margin-top: -10px;
-    margin-bottom: 15px;
-    color: #b3261e;
-}
-
-.error-message:empty {
-    display: none;
-}
-
-.field.invalid {
-    border-color: #b3261e;
-    background-color: #fdeeee;
-}
-
-.field.valid {
-    border-color: #2e7d32;
-}
-
 #message {
     height: 100px;
-}
-
-.char-counter {
-    display: block;
-    margin-top: -10px;
-    margin-bottom: 15px;
-    text-align: right;
-    color: #6f4e37;
 }
 
 .success-message {
@@ -44,23 +16,6 @@
 .dark-theme #contact-form {
     background-color: #2b1a10;
     border-color: #5a4331;
-}
-
-.dark-theme .field.invalid {
-    background-color: #3a1a1a;
-    border-color: #e57373;
-}
-
-.dark-theme .field.valid {
-    border-color: #66bb6a;
-}
-
-.dark-theme .error-message {
-    color: #ff8a80;
-}
-
-.dark-theme .char-counter {
-    color: #e0b48a;
 }
 
 .dark-theme .success-message {
