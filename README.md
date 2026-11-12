@@ -1,104 +1,236 @@
-# Jan & Coffee - Coffee Shop Website (Endterm Project)
+# Jan & Coffee
 
-## Topic
-A multi-page responsive website for a coffee shop called **Jan & Coffee**, made by students of Astanait University.
-The endterm project continues the midterm website: same topic, same group, same five pages, same Bootstrap layout.
-New JavaScript and jQuery features were added to the existing pages.
+A responsive coffee shop website with an interactive menu, shopping cart, favorites, weather recommendations, customer reviews, a photo gallery and a contact form.
 
-## Group Members and Work Split
-Every member owns their own pages, with their own HTML, CSS, JavaScript and jQuery files.
+The project combines HTML, CSS, Bootstrap, JavaScript and jQuery in a client-side application. Dynamic content is rendered in the browser, and preferences and visitor data are stored locally using localStorage.
 
-| Member | Pages | Files |
-|---|---|---|
-| Sultanali | Home, About + shared theme | `index.html`, `about.html`, `js/storage.js`, `js/theme.js`, `css/theme.css`, `js/home-data.js`, `js/home.js`, `js/home-jquery.js`, `css/home.css`, `js/about-jquery.js`, `css/about.css` |
-| Alihan | Menu | `menu.html`, `js/menu-data.js`, `js/menu.js`, `js/menu-jquery.js`, `css/menu.css` |
-| Rizon | Gallery, Contact | `gallery.html`, `js/gallery-data.js`, `js/gallery.js`, `js/gallery-jquery.js`, `css/gallery.css`, `contact.html`, `js/contact.js`, `js/contact-jquery.js`, `css/contact.css` |
-
-Commit order: Sultanali first pushes the shared files (`storage.js`, `theme.js`, `theme.css`), then Alihan and Rizon run `git pull` and push their own pages.
+- **Live website:** [Jan & Coffee](https://sultanalibaltabai-alt.github.io/WebAssignmentEndTerm/)
+- **Repository:** [WebAssignmentEndTerm](https://github.com/sultanalibaltabai-alt/WebAssignmentEndTerm)
 
 ## Pages
-- `index.html` - Home (popular drinks are created from an array)
-- `about.html` - About (team cards with "Read more" effect)
-- `menu.html` - Menu (table created from an array, search, filter, cart, favorites)
-- `gallery.html` - Gallery (photos created from an array, lightbox)
-- `contact.html` - Contact (feedback form with validation)
 
-## Project Structure
+| Page | File | Description |
+|---|---|---|
+| Home | `index.html` | Introduction, popular drinks, current weather and a five-day forecast for Astana |
+| About | `about.html` | Coffee shop story and expandable information cards |
+| Menu | `menu.html` | Drink search, filtering, sorting, shopping cart and favorites |
+| Gallery | `gallery.html` | Photo gallery with a lightbox preview |
+| Reviews | `reviews.html` | Review management, average rating and rating distribution |
+| Contact | `contact.html` | Contact information and a validated feedback form |
+
+## Features
+
+### Weather and drink recommendations
+
+- Current temperature and weather description for Astana.
+- Five-day forecast displayed as dynamic cards.
+- Hot drink recommendations below 15°C and cold drink recommendations at 15°C or above, based on the rounded temperature.
+- A See drinks link that opens the Menu with the corresponding Hot or Cold filter.
+- Loading, empty and error states, plus a Try again button after a failed request.
+
+### Interactive menu
+
+- Case-insensitive search by drink name.
+- Filtering by drink type: All, Hot or Cold.
+- Maximum price filter with a range slider.
+- Sorting by name, ascending price or descending price.
+- Search, type and price filters work together.
+- Reset filters button and a message when no drinks match.
+- Best seller highlighting.
+- Prices displayed in Kazakhstani tenge.
+
+### Cart and favorites
+
+- Add drinks to the cart, including multiple entries for the same drink.
+- Remove individual cart entries and calculate the total price.
+- Clear the cart or use Place Order to display a confirmation and empty it.
+- Add or remove favorite drinks and clear the favorites list.
+- Restore cart and favorites after a page reload.
+- Ignore stored drink IDs that are no longer present in the menu.
+- Animated notifications and a back-to-top button on the Menu page.
+
+### Reviews and statistics
+
+- Create reviews with a name, rating from 1 to 5 and review text.
+- Display reviews with stars and dates, newest first.
+- Edit an existing review or cancel editing.
+- Delete an individual review or delete all reviews with confirmation.
+- Validate names and review text before saving.
+- Review text must contain 10-200 characters after trimming.
+- Show the total number of reviews, average rating and distribution of ratings from 5 to 1.
+- Save reviews locally and restore them when the page opens.
+- Use jQuery animations for new reviews, deletion and feedback messages.
+
+### Gallery and contact form
+
+- Build the gallery from a JavaScript data array.
+- Open a larger photo with its caption in a lightbox.
+- Close the lightbox with its close button, a click on the overlay or the Escape key.
+- Validate the contact name, email address, topic and message.
+- Require contact messages to contain 10-300 characters after trimming.
+- Display field-specific errors, a character counter and a success message.
+- Reuse shared validation helpers across Contact and Reviews.
+
+### Theme, text size and responsive layout
+
+- Switch between light and dark themes.
+- Adjust the root font size with A-, A and A+ controls, from 12 to 22 px in 2 px steps.
+- Reset the root font size to 16 px.
+- Preserve the selected theme and font size between pages and reloads on the same origin.
+- Use Bootstrap navigation and responsive CSS layouts.
+- Provide descriptive image alternatives, labeled controls and ARIA attributes for selected status messages and buttons.
+
+## Technologies
+
+| Technology | Usage |
+|---|---|
+| HTML5 | Page structure, forms and semantic elements |
+| CSS3 | Layouts, responsive styles, themes and components |
+| Bootstrap 5.3.3 | Navigation, grid, utilities and buttons |
+| JavaScript | DOM rendering, events, classes, filtering, validation and localStorage |
+| jQuery 3.7.1 | Animations, effects and event handling |
+| Fetch API | Asynchronous weather requests |
+| Open-Meteo | Current weather and forecast data |
+| Google Fonts | Poppins and Playfair Display |
+| Unsplash | Remotely hosted photography |
+| GitHub Pages | Static website hosting |
+
+## Run locally
+
+Clone the repository and open its directory:
+
+```bash
+git clone https://github.com/sultanalibaltabai-alt/WebAssignmentEndTerm.git
+cd WebAssignmentEndTerm
 ```
-jan-coffee/
-  index.html, about.html, menu.html, gallery.html, contact.html
-  css/style.css        midterm styles
-  css/theme.css        dark theme (all pages)
-  css/home.css         home page styles
-  css/about.css        about page styles
-  css/menu.css         menu page styles (cart, favorites, toast, back-to-top)
-  css/gallery.css      gallery page styles (lightbox)
-  css/contact.css      contact page styles (form errors, success message)
-  js/storage.js        saving and loading data in localStorage (shared)
-  js/theme.js          theme switcher (all pages)
-  js/home-data.js      array popularDrinks
-  js/home.js           popular drinks on the home page
-  js/home-jquery.js    jQuery: fade-in cards, hover effect
-  js/about-jquery.js   jQuery: team cards "Read more"
-  js/menu-data.js      array drinks
-  js/menu.js           menu table, search, filter, cart, favorites
-  js/menu-jquery.js    jQuery: toast message, back-to-top button
-  js/gallery-data.js   array galleryPhotos
-  js/gallery.js        gallery and lightbox
-  js/gallery-jquery.js jQuery: photo and lightbox fade-in
-  js/contact.js        contact form validation
-  js/contact-jquery.js jQuery: success message, shake, textarea animation
+
+Start a local HTTP server using Python 3:
+
+```bash
+python -m http.server 8000
 ```
 
-## New Endterm Features
-1. **Theme switcher (all pages)** - the "Dark mode" button in the navbar changes the theme. The choice is saved.
-2. **Home** - popular drinks are created from an array; jQuery fades the cards in one by one, and hovering a card dims the other cards.
-3. **About** - jQuery "Read more" button slides the team member bio down and up.
-4. **Menu search** - the table is filtered while the user types.
-5. **Menu type filter** - the select "All types / Hot / Cold" filters the table.
-6. **Cart** - the "Add" button adds a drink. The cart shows the items, the total price and a "Remove" button for each item. "Place Order" clears the cart. The cart is saved.
-7. **Favorites** - the heart button adds or removes a favorite drink. The list is updated at once and is saved.
-8. **Menu jQuery** - a toast message fades in and out after cart actions; a back-to-top button fades in after scrolling and scrolls the page up smoothly.
-9. **Gallery** - photos are created from an array and fade in one by one; a click opens a lightbox that fades in (close with the button, a click, or Escape).
-10. **Contact form** - every field is validated with messages under the fields; the form shakes when there are errors; the message field grows on focus; the success message fades in.
+Open [http://localhost:8000](http://localhost:8000) in a modern browser. Stop the server with Ctrl+C in the terminal.
 
-## How the Requirements Are Covered
-- **Arrays** - `drinks` (`menu-data.js`), `popularDrinks` (`home-data.js`), `galleryPhotos` (`gallery-data.js`); also `cartIds`, `favoriteIds`, `fieldRules`.
-- **Loops** - `for...of` and `forEach` in `home.js`, `menu.js`, `gallery.js`, `contact.js`.
-- **Functions with parameters and return values** - for example `filterDrinks(searchText, type)`, `calculateTotal(ids)`, `findDrinkById(id)`, `createDrinkRow(drink)`, `validateEmail(value)`, `createSuccessText(name, wantsReply)`.
-- **DOM manipulation** - content is created from arrays with `createElement`; text, classes and attributes are changed; elements are added and removed (cart items, lightbox).
-- **Events** - `addEventListener` with `click`, `input`, `change`, `submit`, `keydown`, `blur`, `DOMContentLoaded`; the event object (`event.target`, `event.key`) and `event.preventDefault()` are used.
-- **Form validation** - name, email, topic, message length (10-300), messages near fields, success message.
-- **jQuery** - selectors: ID (`#toast`), class (`.team-toggle`), element (`body`), descendant (`#gallery figure`, `html, body`); traversal: `siblings()`, `closest()`, `each()`; events: `click`, `scroll`, `mouseenter`, `mouseleave`, `focus`, `blur`; effects: `slideToggle()`, `fadeIn()`, `fadeOut()`, `fadeTo()`, `delay()`, `animate()`.
+Alternatively, open the project in VS Code and use the Live Server extension to serve `index.html`.
 
-## How to Test
-1. Open any page and press **Dark mode**. Open another page: the theme stays. Press **Light mode** to go back.
-2. Open `menu.html`.
-   - Type `latte` in the search field: only two drinks stay. Type `zzz`: the message "No drinks found" appears.
-   - Choose **Cold** in the select: only cold drinks stay.
-   - Press **Add** on several drinks: the toast appears, the cart and the total are updated. Press **Remove** to delete an item. Press **Place Order** to finish the order.
-   - Press the heart button: the drink appears in **Favorites**. Reload the page: the cart and favorites are still there.
-3. Open `gallery.html`. Click any photo to open the lightbox. Press `Esc` or click outside to close it.
-4. Open `about.html`. Press **Read more** under a team member: the text slides down. Press **Show less** to hide it.
-5. On `menu.html` scroll down: the round arrow button appears. Press it to scroll to the top.
-6. Open `contact.html`.
-   - Press **Send** with an empty form: error messages appear under every field and the form is not sent.
-   - Enter the name `A1`, the email `bad@mail`, a short message: specific errors are shown.
-   - Write a message longer than 300 characters: the counter and the error show the problem.
-   - Fill the form correctly: the green success message appears and the form is cleared.
-7. Check the site on a phone-size screen: the navbar collapses and the layout stays responsive.
+There is no build step or package installation. An internet connection is needed for the weather service and externally hosted libraries, fonts and images. Use a consistent HTTP origin when checking storage across pages.
 
-## Live Link
+## Weather API
 
+The Home page requests data from [Open-Meteo](https://open-meteo.com/) using `fetch` with `async` and `await`. No API key is configured in this project.
 
-## Sultanali - Final-stage update
+| Parameter | Value |
+|---|---|
+| Endpoint | `https://api.open-meteo.com/v1/forecast` |
+| Latitude | `51.18` |
+| Longitude | `71.45` |
+| Current fields | `temperature_2m,weather_code` |
+| Daily fields | `weather_code,temperature_2m_max,temperature_2m_min` |
+| Forecast duration | `5` days |
+| Time zone | `auto` |
 
-The Home and About pages now include font-size controls (12-22 px), with the selected size saved in localStorage. Shared storage helpers recover from invalid JSON and unavailable browser storage.
+`js/weather-api.js` handles requests, weather code descriptions and conversion of daily data into `DayForecast` objects. `js/weather.js` renders the result, chooses drink recommendations and manages loading, empty, error and retry states.
 
-The Home page loads current weather in Astana and a five-day forecast from Open-Meteo without an API key. The DayForecast class provides the forecast labels and temperature ranges. Loading, empty, error and retry states are included. Drink advice changes with the temperature, and the See drinks link opens the existing Menu page. Automatic selection of the Menu filter depends on the Menu update.
+The recommendation link uses `menu.html?type=Hot` or `menu.html?type=Cold`. The Menu reads this query parameter when it initializes.
 
-Files: index.html, about.html, js/storage.js, js/accessibility.js, css/theme.css, js/weather-api.js, js/weather.js, js/home-jquery.js, css/home.css.
+## Object-oriented JavaScript
 
-Alihan's Menu and Rizon's Gallery and Contact remain at their current repository versions. Their Final-stage changes and the Reviews page have not been published in this update.
+| Class | Responsibility |
+|---|---|
+| `DayForecast` | Store a forecast day and format its date, weather description and temperature range |
+| `Drink` | Represent a drink and provide search, type, price and display methods |
+| `StoredList` | Manage a stored list of IDs, saving, clearing and validation against available IDs |
+| `Cart` | Extend `StoredList` with adding drinks and removing entries |
+| `FavoriteList` | Extend `StoredList` with membership checks and favorite toggling |
+| `Review` | Represent a review and format stars and dates |
+| `ReviewList` | Load, create, update, delete and save reviews, and calculate rating statistics |
 
-Validation: browser checks cover five forecast cards with controlled API responses, API failure/retry and empty responses, font-size persistence and reset after invalid data, theme persistence, About biographies, adding a drink to the cart, all existing pages, a 390 px viewport, and blocked localStorage. No JavaScript page errors were observed. API checks use controlled responses and do not establish live service availability.
+Objects are created from menu data, weather responses and stored reviews. `Cart` and `FavoriteList` use inheritance to share storage behavior.
+
+## Local storage
+
+| Key | Stored value |
+|---|---|
+| `theme` | `"light"` or `"dark"` |
+| `fontSize` | Selected root font size |
+| `cartIds` | Array of drink IDs in the cart |
+| `favoriteIds` | Array of favorite drink IDs |
+| `reviews` | Array of review objects |
+
+`js/storage.js` provides shared JSON loading and saving helpers. Invalid JSON falls back to a default value, list loaders check for arrays, and storage access failures are caught. Reviews and saved font sizes have additional checks when loaded.
+
+Data belongs to the current browser profile and website origin. It is not synchronized between devices or shared with other visitors. Clearing site data removes saved preferences, reviews, cart entries and favorites. If browser storage is unavailable, interactions can continue without persistence.
+
+## Project structure
+
+```text
+WebAssignmentEndTerm/
+├── README.md
+├── index.html
+├── about.html
+├── menu.html
+├── gallery.html
+├── reviews.html
+├── contact.html
+├── css/
+│   ├── style.css
+│   ├── theme.css
+│   ├── validation.css
+│   ├── home.css
+│   ├── about.css
+│   ├── menu.css
+│   ├── gallery.css
+│   ├── reviews.css
+│   └── contact.css
+└── js/
+    ├── storage.js
+    ├── theme.js
+    ├── accessibility.js
+    ├── validation.js
+    ├── weather-api.js
+    ├── weather.js
+    ├── home-data.js
+    ├── home.js
+    ├── home-jquery.js
+    ├── about-jquery.js
+    ├── menu-data.js
+    ├── menu-classes.js
+    ├── menu.js
+    ├── menu-jquery.js
+    ├── gallery-data.js
+    ├── gallery.js
+    ├── gallery-jquery.js
+    ├── reviews-classes.js
+    ├── reviews.js
+    ├── reviews-jquery.js
+    ├── contact.js
+    └── contact-jquery.js
+```
+
+Data arrays are kept in `*-data.js` files. Domain classes are defined in `*-classes.js` and `weather-api.js`. Page scripts render content and connect events; `*-jquery.js` files contain the associated effects. Shared storage, theme, text-size and validation functions are reused where required.
+
+## Manual testing
+
+| Area | Steps and expected behavior |
+|---|---|
+| Home | Open `index.html`; popular drinks render and weather cards appear after a successful request |
+| Weather recommendation | Press See drinks; Menu opens with the recommended Hot or Cold filter |
+| Weather failure | Block the weather request in browser developer tools and reload; an error and Try again appear; unblock and retry |
+| Theme | Toggle the theme, navigate to another page and reload; the selection remains |
+| Text size | Use A- and A+, navigate and reload; the size remains; A resets it |
+| About | Expand and collapse an information card using Read more and Show less |
+| Menu | Combine search, type, price and sorting; verify matching results and Reset filters |
+| Empty results | Search for an unavailable drink; the no-results message appears |
+| Cart | Add multiple drinks, remove one and reload; verify the total and saved entries; test Clear Cart and Place Order |
+| Favorites | Toggle favorite drinks and reload; verify restoration and Clear Favorites |
+| Gallery | Open a photo and close the lightbox using its button, overlay click and Escape |
+| Reviews | Submit an invalid form, then add valid reviews with different ratings; check errors, dates, stars and statistics |
+| Review changes | Edit, cancel editing, save, delete and reload; verify persistence and updated statistics |
+| Delete all reviews | Confirm deletion; the empty state returns and statistics reset |
+| Contact | Test empty fields, an invalid email and a short message; then submit valid data and check the confirmation |
+| Responsive layout | Check narrow and wide viewports, collapsed navigation, cards, forms and tables |
+
+## Application scope
+
+The project runs in the browser without an application backend. Place Order displays a local confirmation and clears the cart; it does not process payments or send an order. The contact form validates input and shows a local success message; it does not deliver email. Reviews are stored in the current browser rather than a shared database.
